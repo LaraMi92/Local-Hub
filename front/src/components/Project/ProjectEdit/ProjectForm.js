@@ -1,16 +1,14 @@
 // == IMPORT PACKAGES
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
 
 // IMPORT DATE UTIL
 import dateFormater from 'src/utils/dateHTMLFormater';
 
 // == IMPORTS COMPONENTS
 import {
-  Button,
-  Form,
-  Image,
-  Segment,
+  Button, Form, Image, Segment,
 } from 'semantic-ui-react';
 
 // == STYLES
@@ -75,9 +73,11 @@ const ProjectForm = ({
           type="date"
           label="Date d'échéance"
           title="Date d'échéance"
-          placeholder={dateFormater(new Date().getTime() + (60 * 60 * 24 * 1000 * 30))}
+          placeholder={dateFormater(
+            new Date().getTime() + (60 * 60 * 24 * 1000 * 30),
+          )}
           min={dateFormater(new Date())}
-          max={dateFormater(new Date().getTime() + (60 * 60 * 24 * 1000 * 900))}
+          max={dateFormater(new Date().getTime() + 60 * 60 * 24 * 1000 * 900)}
           required
           value={dateFormater(expiration_date)}
           onChange={(event) => {
@@ -85,7 +85,12 @@ const ProjectForm = ({
           }}
         />
         <Form.Field>
-          <Image src={`${image}`} spaced="right" size="small" title="Illustration projet" />
+          <Image
+            src={`${DOMPurify.sanitize(image)}`}
+            spaced="right"
+            size="small"
+            title="Illustration projet"
+          />
           <Button
             className="project-form--button-color"
             type="button"
@@ -102,7 +107,12 @@ const ProjectForm = ({
             onChange={handleFileChange}
           />
         </Form.Field>
-        <Segment className="project-form--align-right" basic compact textAlign="right">
+        <Segment
+          className="project-form--align-right"
+          basic
+          compact
+          textAlign="right"
+        >
           <Button
             className="project-form--modify-color"
             type="submit"

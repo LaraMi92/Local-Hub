@@ -1,5 +1,5 @@
 {
-  "URL_BACK":"http://3.82.242.224:3000", 
+  "URL_BACK":"http://localhost:3000", 
   "URL_BACK_LOCALHOST":"http://localhost:3000",
   "URL_BACK_HEROKU":"https://localhub-api.herokuapp.com", 
   "URL_GEOCODE":"https://nominatim.openstreetmap.org/search"

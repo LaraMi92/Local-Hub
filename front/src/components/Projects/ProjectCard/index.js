@@ -2,6 +2,7 @@
 // == IMPORT PACKAGES
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
+import DOMPurify from 'dompurify';
 
 // == IMPORTS COMPONENTS
 import {
@@ -31,45 +32,49 @@ const HeaderStar = ({
 }) => (
   <>
     <Header as="h3" size={`${size}`}>
-      <Header.Content><Link className="project-card--title" to={`/projet/${project.id}`}>{`${project.title} `}</Link></Header.Content>
+      <Header.Content>
+        <Link
+          className="project-card--title"
+          to={`/projet/${project.id}`}
+        >{`${project.title} `}
+        </Link>
+      </Header.Content>
     </Header>
-    { (!project.isAuthor && logged)
-      && (project.isFavorite
-        ? (
-          <Button
-            icon={{
-              name: 'star',
-              color: 'yellow',
-            }}
-            size="mini"
-            onClick={() => {
-              removeFromFavorite(project.id);
-            }}
-            title="Retirer des favoris"
-            content="Retirer des favoris"
-            labelPosition="left"
-            basic
-            compact
-          />
-        )
-        : (
-          <Button
-            icon={{
-              name: 'star outline',
-              color: 'yellow',
-            }}
-            size="mini"
-            onClick={() => {
-              addToFavorite(project.id);
-            }}
-            title="Ajouer aux favoris"
-            content="Ajouter aux favoris"
-            labelPosition="left"
-            basic
-            compact
-          />
-        )
-      )}
+    {!project.isAuthor
+      && logged
+      && (project.isFavorite ? (
+        <Button
+          icon={{
+            name: 'star',
+            color: 'yellow',
+          }}
+          size="mini"
+          onClick={() => {
+            removeFromFavorite(project.id);
+          }}
+          title="Retirer des favoris"
+          content="Retirer des favoris"
+          labelPosition="left"
+          basic
+          compact
+        />
+      ) : (
+        <Button
+          icon={{
+            name: 'star outline',
+            color: 'yellow',
+          }}
+          size="mini"
+          onClick={() => {
+            addToFavorite(project.id);
+          }}
+          title="Ajouer aux favoris"
+          content="Ajouter aux favoris"
+          labelPosition="left"
+          basic
+          compact
+        />
+      ))}
   </>
 );
 HeaderStar.propTypes = {
@@ -91,19 +96,52 @@ const ProjectCard = ({
   const checkCount = checkArr.reduce((a, b) => a + b, 0);
   return (
     <Segment className="project-card--fullwidth" compact>
-      { project.isArchived && <Label color="grey" corner="right" icon="archive" title="Projet archivé" size="big" /> }
+      {project.isArchived && (
+        <Label
+          color="grey"
+          corner="right"
+          icon="archive"
+          title="Projet archivé"
+          size="big"
+        />
+      )}
       <Grid divided stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column computer={4} only="computer" textAlign="center">
-            <Link to={`/projet/${project.id}`}><Image className="project-card--picture" src={`${project.image}`} centered spaced rounded /></Link>
+            <Link to={`/projet/${project.id}`}>
+              <Image
+                className="project-card--picture"
+                src={`${DOMPurify.sanitize(project.image)}`}
+                centered
+                spaced
+                rounded
+              />
+            </Link>
           </Grid.Column>
           <Grid.Column computer={12} mobile={16}>
             <Grid centered>
               <Grid.Row>
-                <Grid.Column className="project-card--padding-mobile" only="mobile" width={4} textAlign="center">
-                  <Link to={`/projet/${project.id}`}><Image src={`${project.image}`} centered spaced rounded className="project-card--picture" /></Link>
+                <Grid.Column
+                  className="project-card--padding-mobile"
+                  only="mobile"
+                  width={4}
+                  textAlign="center"
+                >
+                  <Link to={`/projet/${project.id}`}>
+                    <Image
+                      src={`${DOMPurify.sanitize(project.image)}`}
+                      centered
+                      spaced
+                      rounded
+                      className="project-card--picture"
+                    />
+                  </Link>
                 </Grid.Column>
-                <Grid.Column className="project-card--padding-mobile" only="mobile" width={12}>
+                <Grid.Column
+                  className="project-card--padding-mobile"
+                  only="mobile"
+                  width={12}
+                >
                   <HeaderStar
                     project={project}
                     size="small"
@@ -123,17 +161,55 @@ const ProjectCard = ({
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-            <p className="project-card--marged-top"><Image avatar spaced="right" src={`${project.author.avatar}`} />{`${project.author.name}`}</p>
+            <p className="project-card--marged-top">
+              <Image
+                avatar
+                spaced="right"
+                src={`${DOMPurify.sanitize(project.author.avatar)}`}
+              />
+              {`${project.author.name}`}
+            </p>
             <Segment basic compact>{`${project.description}`}</Segment>
-            <p><Icon name="target" />{`${project.location}`}</p>
+            <p>
+              <Icon name="target" />
+              {`${project.location}`}
+            </p>
             <Divider />
             <Label.Group>
-              <Label basic title="Nombre de followers" icon="star" content={`${project.followers.length}`} />
-              <Label basic title="Date de création du projet" content="Créé le" detail={`${project.creation_date}`} />
-              <Label basic title="Date d'expiration du projet" content="Expire le" detail={`${project.expiration_date}`} />
-              <Label as="a" basic href={`mailto:${project.author.email}`} content={`${project.author.email}`} icon="mail" />
+              <Label
+                basic
+                title="Nombre de followers"
+                icon="star"
+                content={`${project.followers.length}`}
+              />
+              <Label
+                basic
+                title="Date de création du projet"
+                content="Créé le"
+                detail={`${project.creation_date}`}
+              />
+              <Label
+                basic
+                title="Date d'expiration du projet"
+                content="Expire le"
+                detail={`${project.expiration_date}`}
+              />
+              <Label
+                as="a"
+                basic
+                href={`mailto:${project.author.email}`}
+                content={`${project.author.email}`}
+                icon="mail"
+              />
             </Label.Group>
-            <Progress value={checkCount} total={project.needs.length} progress="ratio" size="small" indicating content="Couverture des besoins" />
+            <Progress
+              value={checkCount}
+              total={project.needs.length}
+              progress="ratio"
+              size="small"
+              indicating
+              content="Couverture des besoins"
+            />
           </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -1,6 +1,7 @@
 // == IMPORT PACKAGES
 import React from 'react';
 import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
 
 // == IMPORTS COMPONENTS
 import {
@@ -36,7 +37,7 @@ const ProfilView = ({
       <Item className="profil-view--no-margin-top">
 
         {/* USER AVATAR */}
-        <Item.Image size="small" src={`${avatar}`} />
+        <Item.Image size="small" src={`${DOMPurify.sanitize(avatar)}`} />
         <Item.Content>
 
           {/* USER NAME */}

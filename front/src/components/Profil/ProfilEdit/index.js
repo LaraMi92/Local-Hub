@@ -1,13 +1,11 @@
 // == IMPORTS PACKAGES
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
 
 // == IMPORTS COMPONENTS
 import {
-  Button,
-  Form,
-  Image,
-  Segment,
+  Button, Form, Image, Segment,
 } from 'semantic-ui-react';
 
 // == IMPORT STYLES
@@ -35,7 +33,6 @@ const ProfilEdit = ({
   return (
     <Segment textAlign="left">
       <Form onSubmit={handleSubmit}>
-
         {/** USER NAME */}
         <Form.Input
           type="text"
@@ -64,7 +61,12 @@ const ProfilEdit = ({
         />
 
         <Form.Field>
-          <Image src={`${avatar}`} spaced="right" size="small" title="Avatar utilisateur" />
+          <Image
+            src={`${DOMPurify.sanitize(avatar)}`}
+            spaced="right"
+            size="small"
+            title="Avatar utilisateur"
+          />
           <Button
             className="modify-button"
             type="button"
@@ -101,7 +103,6 @@ const ProfilEdit = ({
             />
           </Button.Group>
         </Segment>
-
       </Form>
     </Segment>
   );
