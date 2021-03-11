@@ -5,3 +5,5 @@ A project can be updated by its creator through a needs list, depending on how a
 Unidentified users can browse the projects as they wish.
 
 Watch the demo [here](https://youtu.be/B-olvh8Y2_Q?t=1343)
+
+![](https://drive.google.com/file/d/1nX-7yl-kBuuz7F3E1UOGrKkBB6mfDGXP/view?usp=sharing)
