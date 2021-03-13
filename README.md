@@ -4,7 +4,7 @@ This project allows users, after authentification, to create projects which othe
 A project can be updated by its creator through a needs list, depending on how advanced the project is at.
 Unidentified users can browse the projects as they wish.
 
-![homepage](https://db3pap004files.storage.live.com/y4mOjVomEw1c5zx7z5o5aKppzjwEn4tajCpYeQt7ncjjR4sspZmGEL1qz0p6LzOx2273CJn0pqfFZp6kWUu_G07sURl_2yn3jKjMEFqxr0IAsOv5ljtsTV1nM4UroL_qda25n4GbwKZsW02c7YRMLj9553ssbGJgLowCIGtdsm7jhn4xf6z_pZVz44dsYx-i30_?width=604&height=872&cropmode=none)
+![homepage](https://db3pap004files.storage.live.com/y4mOjVomEw1c5zx7z5o5aKppzjwEn4tajCpYeQt7ncjjR4sspZmGEL1qz0p6LzOx2273CJn0pqfFZp6kWUu_G07sURl_2yn3jKjMEFqxr0IAsOv5ljtsTV1nM4UroL_qda25n4GbwKZsW02c7YRMLj9553ssbGJgLowCIGtdsm7jhn4xf6z_pZVz44dsYx-i30_?width=604&height=872&cropmode=none){:height="50%" width="50%"}
 
 Watch the demo [here](https://youtu.be/B-olvh8Y2_Q?t=1343)
 
