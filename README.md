@@ -5,8 +5,9 @@ A project can be updated by its creator through a needs list, depending on how a
 Unidentified users can browse the projects as they wish.
 
 
-<img src="https://db3pap004files.storage.live.com/y4mOjVomEw1c5zx7z5o5aKppzjwEn4tajCpYeQt7ncjjR4sspZmGEL1qz0p6LzOx2273CJn0pqfFZp6kWUu_G07sURl_2yn3jKjMEFqxr0IAsOv5ljtsTV1nM4UroL_qda25n4GbwKZsW02c7YRMLj9553ssbGJgLowCIGtdsm7jhn4xf6z_pZVz44dsYx-i30_?width=604&height=872&cropmode=none" alt="homepage" width=20% height=20%><img
-src="https://db3pap004files.storage.live.com/y4mTr9_85gcETphRY7-amU4AsGLjpWX7cyVp3lAqi5PUDetUpnb7k0YigRt82IH6Vodb68pM5vSIsQGubsu37LV1VOqyl7j9VrCjhZ80FlWyyZRAjRlGUuam_RUo8NGAO2U98fIa1ZmCcTyWbFJPYjAFvZO_VsacJc39utHXqgsei3N4PI3Q-zo3e3E0QX_iPq4?width=568&height=980&cropmode=none" alt="project" width=20% height=20%>
+<img src="https://db3pap004files.storage.live.com/y4mgC_cWzMmBf3sOnAR_swhJOshNjfnMiMSpr06qQVAvzns6Z2Pjvp1xoNXM5kJc4myql1I_Al51tTqImDSoNYGchkkdjyyPR46PU5P3ZUdxJhDwPKGXmIcIluKjAZ7MYbHCwTXE2y_mE1uURI6rPLq1RorkRBCDj42kVwLz_SyvwtKx4HjPcxcFN_narBXruME?width=2151&height=821&cropmode=none" alt="homepage" width=40% height=40%>
+<img
+src="https://db3pap004files.storage.live.com/y4mnVhfCBLhywjbt7GFB9uGufVI-BIVCb56qWD4wOZ4vMbdh0_J5KPoYBCDDXBDWe4ly_UmZ2KcQeFzRyaAZU-cEi-a3KXi_mIl0SSnc1KYQaNmsplh0r0QAvjhvlZvnTWYQOssTvnQmjPAyvPBGMYTWc0WkeGM9X-vtmE7JU4FdA2y1D4kkoW2SvVut_1b9f40?width=2151&height=821&cropmode=none" alt="project" width=40% height=40%>
 
 Watch the demo [here](https://youtu.be/B-olvh8Y2_Q?t=1343)
 
