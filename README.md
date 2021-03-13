@@ -4,6 +4,8 @@ This project allows users, after authentification, to create projects which othe
 A project can be updated by its creator through a needs list, depending on how advanced the project is at.
 Unidentified users can browse the projects as they wish.
 
+![homepage](https://drive.google.com/file/d/1DVP1YkSo2fWmdozCSlZQdbwjnbCvAdm3/view?usp=sharing)
+
 Watch the demo [here](https://youtu.be/B-olvh8Y2_Q?t=1343)
 
 FR:
